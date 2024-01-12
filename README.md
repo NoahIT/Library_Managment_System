@@ -59,31 +59,31 @@ UserManager ir ItemManager klasės kapsuliuoja būseną ir elgseną, susijusią 
 ```bash
   Abstrakcija (Abstraction)
 ```
-IUserManager ir IItemManager sąsajos pateikia abstraktų operacijų, kurias galima atlikti, apibrėžimą, nenurodydamos, kaip šios operacijos yra įgyvendinamos. Ši abstrakcija leidžia turėti skirtingas konkrečias įgyvendinimas, kurios gali būti keičiamos neveikiant likusios sistemos.
+IUserManager ir IItemManager sąsajos pateikia abstrakčias operacijas, kurias galima atlikti nennurodant, kaip šios operacijos yra įgyvendinamos. Ši abstrakcija leidžia turėti skirtingas konkrečius įgyvendinimus, kurie gali būti keičiami nekeičiant likusios sistemos.
 ```bash
   Paveldėjimas (Inheritance)
 ```
-Nors tiesiogiai pateiktose ištraukose nepateikta, paveldėjimas gali būti naudojamas kuriant specifinius elementų tipus arba specifinius vartotojų tvarkytojus. Pavyzdžiui, galėtumėte turėti AdminUserManager, kuris paveldi iš UserManager ir teikia papildomas adminstracinio lygio funkcijas.
+Paveldęjimas pademonstruotas kodo architektūroje.
 ```bash
   Polimorfizmas (Polymorphism)
 ```
-Polimorfizmas naudojamas per sąsajas IUserManager ir IItemManager. Tai leidžia HomeWindow sąveikauti su bet kuriuo objektu, kuris įgyvendina šias sąsajas polimorfiškai. Pavyzdžiui, jei IItemManager įgyvendinimas skirtingų tipų elementams, HomeWindow gali juos keistis tarpusavyje.
+Polimorfizmas naudojamas per sąsajas IUserManager ir IItemManager. Tai leidžia HomeWindow sąveikauti su bet kuriuo objektu, kuris įgyvendina šias sąsajas polimorfiškai. Pavyzdžiui, jei IItemManager įgyvendima skirtingus elementų tipus, HomeWindow gali juos keistis tarpusavyje.
 ```bash
   Vieno Atsakomybės Principas (Single Responsibility Principle)
 ```
-Kiekviena klasė turi vieną atsakomybę. Pavyzdžiui, ItemManager yra atsakingas už daiktų valdymą (nuomą, grąžinimą, pirkimą), o UserManager už vartotojų autentifikaciją ir registraciją. HomeWindow yra atsakingas tik už vartotojo sąsajos sąveikas.
+Kiekviena klasė turi vieną atsakomybę. Pavyzdžiui, ItemManager yra atsakingas už daiktų(knygų/žurnalų) valdymą (nuomą, grąžinimą, pirkimą), o UserManager už vartotojų autentifikaciją ir registraciją. Pavyzdžiui LogInWindow yra atsakingas tik už vartotojo sautentifikaciją.
 ```bash
   Atviro/Uždaro Principas (Open/Closed Principle)
 ```
-Sistema yra atvira plėtrai, bet uždara modifikacijai. Pavyzdžiui, jei norite palaikyti naują publikuojamo daikto tipą, jums nereikia modifikuoti ItemManager ar HomeWindow klasių; galite praplėsti IPublishable sąsają ir pridėti naują tipą į sistemą.
+Sistema yra atvira plėtrai, bet uždara modifikacijai. Pavyzdžiui, jei yra poreikis palaikyti naują publikuojamo daikto tipą, tai nereikia modifikuoti ItemManager ar HomeWindow klases, nes galima praplėsti IPublishable sąsają ir pridėti naują tipą į sistemą.
 ```bash
   Liskov Substitucijos Principas (Liskov Substitution Principle)
 ```
-Išvestinės klasės turi būti keičiamos su jų bazinėmis klasėmis. Šis principas laikomas naudojant sąsajas, pavyzdžiui, IUserManager ir IItemManager. Bet kuri klasė, įgyvendinanti šias sąsajas, gali būti keičiama be norimų programos savybių pakeitimo.
+Išvestinės klasės turi būti keičiamos su jų bazinėmis klasėmis. Šis principas taikomas naudojant sąsajas IUserManager ir IItemManager. Bet kuri klasė, įgyvendinanti šias sąsajas, gali būti keičiama be norimų programos savybių pakeitimo.
 ```bash
   Sąsajų Atskyrimo Principas (Interface Segregation Principle)
 ```
-Klientai neturėtų būti priversti priklausyti nuo sąsajų, kurių jie nenaudoja. IUserManager sąsajoje yra deklaruojami tik su vartotojų valdymu susiję metodai. Panašiai IItemManager sąsajoje yra tik daiktų valdymo metodai, užtikrinant, kad klases, įgyvendinančias šias sąsajas, tikrai reikės teikti atitinkamą funkcionalumą.
+Klientai yra priversti priklausyti nuo sąsajų. IUserManager sąsajoje yra deklaruojami tik su vartotojų valdymu susiję metodai. Panašiai IItemManager sąsajoje yra tik daiktų valdymo metodai, užtikrinant, kad klases, įgyvendinančias šias sąsajas, tikrai galės teikti atitinkamą funkcionalumą.
 ```bash
   Priklausomybių Apversimo Principas (Dependency Inversion Principle)
 ```
