@@ -1,0 +1,60 @@
+﻿-------------------------------------------------------------------------------------------------User priveliges:
+
+[Student]:
+	Can read, rent, return, buy - Books
+	Can view rented book list and their deadlines
+	Can edit their profile - name, lastname, email, student group
+
+[Librarian]:
+	Can read, update and review the books that are rented or needs to be returned
+	Can send the message to the student if he hasn't returned the book
+	Can edit their profile - name, lastname, email
+
+[Admin]:
+	Can read, update, delete, insert - students, librarians or books.
+	Can alter every information regarding students or librarians.
+
+-------------------------------------------------------------------------------------------------------------OOP:
+
+Encapsulation ????
+
+Abstraction DONE
+
+Polimorphism DONE
+
+Inheritance DONE
+
+-----------------------------------------------------------------------------------------------------------SOLID:
+
+Single Responsibility Principle	
+	(Each class should be responsible for a single part or functionality of the system.)
+
+Open-Closed Principle	
+	(Software components should be open for extension, but not for modification.)
+
+Liskov Substitution Principle	
+	(Objects of a superclass should be replaceable with objects of its subclasses without breaking the system.)
+
+Interface Segregation Principle	
+	(No client should be forced to depend on methods that it does not use.)
+
+Dependency Inversion Principle	
+	(High-level modules should not depend on low-level modules, both should depend on abstractions.)
+
+
+--------------------------------------------------------------------------------------------------IDENTIFICATION:
+
+User Identificatio:
+	Students: s00000@lms.lt
+	Librarians: l00000@lms.lt
+	Admins: a00@lms.lt
+	
+------------------------------------------------------------------------------------------------------------TECH:
+
+Tech Stack Used:
+	Programming languages: C# (IDE: Visual Studio 2022)
+	UI/UX: XAML markup language
+	Framework: .NET
+	Data Storage: MySQl Database (RDBMS: MySQL Workbench)
+	Server name: "BLMS_DB"
+	NuGet packages: MySQL.Data

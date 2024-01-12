@@ -1,0 +1,111 @@
+﻿<Window x:Class="LMS_VIKO_Nojus_Rascius_PI22A.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LMS_VIKO_Nojus_Rascius_PI22A"
+        mc:Ignorable="d"
+        Title="Book Library Managment System" 
+        Height="450" 
+        Width="300"
+        ResizeMode="NoResize">
+
+    <Window.Background>
+        <ImageBrush ImageSource="Images/BackgroundImageLibrary.jpg" Opacity="0.2"/>
+    </Window.Background>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Image Width="100"
+               Height="150"
+               Source="Images/BookLogo.png" 
+               Grid.Column="1" 
+               Margin="100,11,100,81" 
+               Grid.RowSpan="3"/>
+
+        <Label Content="Username" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top"
+               Foreground="White" 
+               FontFamily="Roboto" 
+               Grid.Column="1" 
+               Grid.Row="2" Margin="74,52,0,0"/>
+        <Label Content="Password" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top"
+               Foreground="White" 
+               FontFamily="Roboto" 
+               Grid.Column="1" 
+               Grid.Row="3" Margin="76,12,0,0"/>
+
+        <TextBox x:Name="UsernameTbx"
+                 HorizontalAlignment="Center" 
+                 VerticalAlignment="Top" 
+                 Width="152" Grid.Column="1" 
+                 Grid.Row="2" Margin="0,76,0,0" 
+                 Height="23" Grid.RowSpan="2"/>
+        <PasswordBox x:Name="PasswordPsb"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center" 
+                     Height="23" Width="152" 
+                     Grid.Column="1" Grid.Row="3"/>
+
+        <Button x:Name="LogInBtn"
+                Content="Log In" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top" Width="80" 
+                Foreground="White" BorderBrush="White"
+                Background="Transparent" Height="26" 
+                Grid.Column="1" Margin="0,96,0,0" 
+                Grid.Row="3" Grid.RowSpan="2" 
+                Click="LogInBtn_Click">
+
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Label Content="I Don't Have An" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top"
+               Foreground="White" 
+               FontFamily="Roboto" 
+               Grid.Column="1" 
+               Grid.Row="4" Margin="83,48,0,0"/>
+        <TextBlock x:Name="LogInAccountTbx"
+                   Text="Account" 
+                   HorizontalAlignment="Left" 
+                   FontWeight="Medium"
+                   Foreground="CadetBlue"
+                   VerticalAlignment="Top"
+                   FontFamily="Roboto" 
+                   Grid.Column="1" 
+                   FontSize="12"
+                   Grid.Row="4" Margin="175,53,0,0"
+                   MouseUp="TextBlockLogIn_MouseUp"
+                   Cursor="Hand"
+                   TextDecorations="Underline"/>
+
+        <Label Content="Log In To Your Account" 
+               HorizontalAlignment="Center" 
+               Margin="0,10,0,0" Grid.Row="2" 
+               VerticalAlignment="Top" Grid.Column="1"
+               Foreground="White" FontSize="20"
+               FontFamily="Roboto"/>
+    </Grid>
+</Window>
+
